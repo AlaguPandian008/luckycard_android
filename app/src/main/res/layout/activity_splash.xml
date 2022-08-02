@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mViewModel"
+            type="com.sampleandroid.screen.activity.splash.SplashViewModel" />
+        <variable
+            name="count"
+            type="String" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.activity.splash.SplashActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_restart"
+            android:onClick="@{()->mViewModel.onClickRestart()}"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/_18ssp"
+            android:layout_marginStart="@dimen/_18sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCountDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_steps"
+            android:textSize="@dimen/_20ssp"
+
+            app:layout_constraintEnd_toStartOf="@+id/tvCountCount"
+            app:layout_constraintTop_toTopOf="@+id/tvCountCount" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCountCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{count}"
+            android:textColor="@color/lightBlue"
+
+            android:textSize="@dimen/_20ssp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCards"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRestart"
+            app:spanCount="3"
+            tools:itemCount="12"
+            tools:listitem="@layout/inflate_cards_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

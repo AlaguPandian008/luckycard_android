@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SAMPLE ANDROID</string>
+    <string name="questioMark">\?</string>
+    <string name="str_restart">Restart</string>
+    <string name="str_steps">STEPS:  </string>
+    <string name="str_zero">0</string>
+
+</resources>
