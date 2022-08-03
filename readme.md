@@ -1,1 +1,3 @@
-int_commit
+LuckyCard
+
+- An android application with MVVM architecture
